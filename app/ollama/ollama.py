@@ -20,13 +20,16 @@ system_message = r"""
     Score 0.7 means, article is pretty much related to that category.
     Score 1 means, article is totally related to that category.
 
+    Additional rule:
+    When calculating score, try to give higher score to the sub-category first. For example, an article can be related to Crypto and Technology category. Then, you should give higher score to Crypto category than Technology category.
+
     Output format:
     Provide your output in json with the keys of "categories", which is an object array of that 22 categories. And that array must contain 22 objects. Each category object contains "name" and "score".
     "name" value is the category name. "score" value is the score value of that category to the article.
     Sort the array from high score to low score.
 
     Example response format:
-    {"categories":[{"name":"Politics","score":0.95},{"name":"Elections","score":0.8},{"name":"Social Issues","score":0.7},{"name":"Legal & Ethics","score":0.6},{"name":"Personal Development","score":0.4},{"name":"Culture & Arts","score":0.3},{"name":"Education","score":0.2},{"name":"Health & Wellness","score":0.1},{"name":"Environment","score":0},{"name":"Technology","score":0},{"name":"Science","score":0},{"name":"Predictions","score":0},{"name":"Business","score":0},{"name":"Finance","score":0},{"name":"Crypto","score":0},{"name":"Entertainment","score":0},{"name":"Sports","score":0},{"name":"Technology","score":0},{"name":"Science","score":0},{"name":"Environment","score":0},{"name":"Legal & Ethics","score":0},{"name":"Education","score":0},{"name":"Travel","score":0},{"name":"Food","score":0},{"name":"Fashion","score":0},{"name":"Hobbies & Crafts","score":0},{"name":"Philosophy & Spirituality","score":0}]}
+    {"categories":[{"name":"category_name1","score":value1},{"name":"category_name2","score":value2},{"name":"category_name3","score":value3}, ...]}
 
     Don't change the categories list.
     Focus on calculating the score correctly.
