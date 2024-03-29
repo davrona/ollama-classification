@@ -31,8 +31,9 @@ system_message = r"""
     Score 0.7 means, article is 70% related to that category.
     Score 1 means, article is 100% to that category.
 
-    Provide your output in json format with the keys of "result", which is an array of items of that 22 categories. Each item object contains "name" and "score" values.
+    Provide your output in json format with the keys of "result", which is an array of items of that 22 categories (Never omit a category. It should be 22 items). Each item object contains "name" and "score" values.
     "name" refers to the category name. "score" refers to the score value of that category name.
+    Remember your output must include only json format result, no explaination of response is needed.
 
     Additional rule:
     When calculating score, try to give higher score to the sub-category first. For example, an article can be related to Crypto and Technology category. Then, you should give higher score to Crypto category than Technology category.
